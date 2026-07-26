@@ -22,7 +22,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
   - {t: L, h: '$$mdi:apple-keyboard-command$$'}
   - {t: '-', h: layer3}
-  - ;
+  - VOLUME DOWN
   - $$mdi:apple-keyboard-shift$$
   - Z
   - X
@@ -34,7 +34,7 @@ layers:
   - ','
   - .
   - /
-  - $$mdi:apple-keyboard-shift$$
+  - VOLUME UP
   - $$mdi:backspace$$
   - {t: '$$mdi:keyboard-space$$', h: layer1}
   - {t: '$$mdi:keyboard-return$$', h: layer2}
