@@ -53,6 +53,6 @@
     input_split_peripheral: input_split_peripheral {
         compatible = "zmk,input-split-peripheral";
         status = "okay";
-        input = <&trackball_central>;
+        device = <&trackball_central>;
     };
 };
