@@ -58,35 +58,27 @@
         };
     };
 
-// --- ここから追加・修正 ---
 
-    // オートマウスレイヤー用のプロセッサを定義
     zip_temp_layer_mouse: zip_temp_layer_mouse {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
-        // クリックキーとして使用するキーのポジション番号（0始まり）を指定
-        // ※これを設定しないとクリック時にマウスレイヤーが解除されます
         excluded-positions = <16 17 18>; 
     };
-
 
         trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
 
-        // オートマウスレイヤーの設定：トラックボールを動かすとレイヤー5へ（例: 2000ms）
-        input-processors = <&zip_temp_layer_mouse 6 2000>;
+        input-processors = <&zip_temp_layer_mouse 5 2000>;
 
-        // スクロールレイヤーの設定：レイヤー7がアクティブなときの挙動
         scroll {
-            layers = <7>;
-            // Y軸（上下）のスクロール方向を反転
+            layers = <6>;
             input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-        }; // ← scroll を閉じる
-    }; // ← trackball_listener を閉じる
+        }; 
+    }; 
 
-}; // ★★★ ここを追加してルートノード `/ {` を閉じる ★★★
+}; 
 
 &pinctrl {
     spi0_default: spi0_default {
