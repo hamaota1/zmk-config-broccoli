@@ -10,14 +10,14 @@
 };
 
 &kscan {
-    // Replace these comments with the GPIO pins in the matrix for the right side.
+    // GPIO pins for the right side of the key matrix.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
     col-gpios
         = <&xiao_d 0 GPIO_ACTIVE_HIGH>
         , <&xiao_d 1 GPIO_ACTIVE_HIGH>
         , <&xiao_d 2 GPIO_ACTIVE_HIGH>
         , <&xiao_d 3 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 6 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 5 GPIO_ACTIVE_HIGH>  // Changed from D6 to avoid sensor IRQ conflict
         ;
     row-gpios
         = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -34,39 +34,18 @@
 &spi0 {
     status = "okay";
 
-    trackball_central: trackball@1 {
-        status = "okay";
+    trackball_central: trackball@0 {
         compatible = "pixart,paw3222";
         reg = <0>;
+        status = "okay";
+        
+        // Device communication settings
         spi-max-frequency = <2000000>;
+        
+        // D6 GPIO is used for sensor interrupt (active low)
         irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        res-cpi = <800>;
-    };
-};
-
-// ペリフェラル（split経由）のリスナーを有効化
-&peripheral_listener {
-    status = "okay";
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor_peripheral>;  
-    // input-processors = 
-    //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-    //         <&mouse_runtime_input_processor>,
-    //         <&scroll_runtime_input_processor>;
-};
-
-// セントラルのリスナーを有効化し、deviceを紐付け
-&central_listener {
-    status = "okay";
-    device = <&trackball_central>;
-    input-processors = 
-        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        <&zip_temp_layer 5 400>;
-
-    scroller {
-        layers = <6>;
-        input-processors = 
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-            <&zip_scroll_scaler 1 16>;
+        
+        // CPI (counts per inch / DPI) sensitivity setting
+        cpi = <800>;
     };
 };
