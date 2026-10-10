@@ -1,23 +1,16 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
-// instructions.
-
 #include "broccoli.dtsi"
 
 &default_transform {
-    // Set this to the number of columns on the left side.
     col-offset = <5>;
 };
 
 &kscan {
-    // GPIO pins for the right side of the key matrix.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
     col-gpios
         = <&xiao_d 0 GPIO_ACTIVE_HIGH>
         , <&xiao_d 1 GPIO_ACTIVE_HIGH>
         , <&xiao_d 2 GPIO_ACTIVE_HIGH>
         , <&xiao_d 3 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 5 GPIO_ACTIVE_HIGH>  // Changed from D6 to avoid sensor IRQ conflict
+        , <&xiao_d 5 GPIO_ACTIVE_HIGH>
         ;
     row-gpios
         = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -45,14 +38,6 @@
     };
 };
 
-/ {
-    chosen {
-        zmk,input-split-peripheral = &input_split_peripheral;
-    };
-
-    input_split_peripheral: input_split_peripheral {
-        compatible = "zmk,input-split-peripheral";
-        status = "okay";
-        device = <&trackball_central>;
-    };
+&trackball_split {
+    device = <&trackball_central>;
 };
