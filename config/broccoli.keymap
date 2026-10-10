@@ -20,16 +20,16 @@
                   &kp Q  &kp W              &kp E              &kp R                  &kp T               &kp Y             &kp U                   &kp I               &kp O               &kp P
 &kp LEFT_CONTROL  &kp A  &hmr_l LEFT_GUI S  &hmr_l LEFT_ALT D  &hmr_l_2 LEFT_SHIFT F  &hmr_l_2 LCTRL G    &hmr_r_2 RCTRL H  &hmr_r_2 RIGHT_SHIFT J  &hmr_r RIGHT_ALT K  &hmr_r RIGHT_GUI L  &lt_arrow 3 MINUS  &kp C_VOLUME_DOWN
 &kp LEFT_SHIFT    &kp Z  &kp X              &kp C              &kp V                  &kp B               &kp N             &kp M                   &kp COMMA           &kp DOT             &kp SLASH          &kp C_VOLUME_UP
-                                            &kp BACKSPACE      &lt_thumb 1 SPACE                                            &lt_thumb 2 ENTER
+                                            &kp LEFT_GUI       &lt 1 SPACE                                                  &lt_thumb 2 ENTER
             >;
         };
 
         layer1 {
             bindings = <
-       &none             &none                 &none             &none              &bootloader         &kp EQUAL         &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACKET      &kp BACKSLASH      &kp LEFT_BRACKET
-&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)      &kp LS(NUMBER_3)  &kp LS(NUMBER_4)   &kp LS(NUMBER_5)    &kp RS(NUMBER_6)  &kp RS(NUMBER_7)      &kp RS(NUMBER_8)       &kp RS(NUMBER_9)   &kp RS(INT1)      &none
-&none  &kp SLASH         &kp LS(SINGLE_QUOTE)  &kp MINUS         &kp LS(SEMICOLON)  &none               &kp RS(INT3)      &kp LS(EQUAL)         &kp RS(RIGHT_BRACKET)  &kp RS(BACKSLASH)  &kp INT3          &none
-                                               &trans            &trans                                                   &trans
+       &kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &kp F6     &kp F7                &kp F8       &kp F9         &kp F10
+&none  &kp N1     &kp N2    &kp N3    &kp N4    &kp N5       &kp N6     &kp N7                &kp N8       &kp N9         &kp N0             &none
+&none  &kp GRAVE  &kp LBKT  &kp RBKT  &kp BSLH  &kp MINUS    &kp EQUAL  &kp NON_US_BACKSLASH  &kp INT_YEN  &kp LG(MINUS)  &kp LG(LS(EQUAL))  &none
+                            &trans    &trans                            &trans
             >;
         };
 
