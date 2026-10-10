@@ -33,36 +33,40 @@
 
 &spi0 {
     status = "okay";
+
+    trackball_central: trackball@1 {
+        status = "okay";
+        compatible = "pixart,paw3222";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        res-cpi = <800>;
+    };
 };
 
-&trackball {
+// ペリフェラル（split経由）のリスナーを有効化
+&peripheral_listener {
     status = "okay";
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor_peripheral>;  
+    // input-processors = 
+    //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+    //         <&mouse_runtime_input_processor>,
+    //         <&scroll_runtime_input_processor>;
 };
 
-&trackball_split {
-    device = <&trackball>;
-};
+// セントラルのリスナーを有効化し、deviceを紐付け
+&central_listener {
+    status = "okay";
+    device = <&trackball_central>;
+    input-processors = 
+        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_temp_layer 5 400>;
 
-/* クリック操作などでAMLから抜けないように除外キーを設定 */
-&zip_temp_layer {
-    /* マウスクリック（J, L）を配置するキーのポジション番号を指定 */
-    excluded-positions = <16 18>; 
-};
-
-&trackball_listener {
-    input-processors = <&zip_temp_layer 5 2000>;
-};
-
-#include <dt-bindings/zmk/input_transform.h>
-
-&trackball_listener {
-    input-processors = <&zip_temp_layer 5 2000>;
-
-    /* スクロールレイヤーの設定（例: レイヤー6） */
-    scroll_layer {
-        layers = ;
+    scroller {
+        layers = <6>;
         input-processors = 
-            <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_scaler 1 3>; /* 必要に応じてスクロール速度を1/3に減速 */
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
+            <&zip_scroll_scaler 1 16>;
     };
 };
