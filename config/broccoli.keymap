@@ -24,7 +24,7 @@
             >;
         };
 
-        layer1 {
+        Number {
             bindings = <
         &kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &kp F6     &kp F7                &kp F8       &kp F9         &kp F10
 &trans  &kp N1     &kp N2    &kp N3    &kp N4    &kp N5       &kp N6     &kp N7                &kp N8       &kp N9         &kp N0             &trans
@@ -33,12 +33,12 @@
             >;
         };
 
-        layer2 {
+        Arrows {
             bindings = <
-       &kp F1        &kp F2                        &kp F3                        &kp F4                          &kp F5                       &kp F6                     &kp F7                           &kp F8                         &kp F9                         &kp F10
-&none  &kp NUMBER_1  &hmr_num_l LEFT_GUI NUMBER_2  &hmr_num_l LEFT_ALT NUMBER_3  &hmr_num_l LEFT_SHIFT NUMBER_4  &hmr_num_l LCTRL NUMBER_5    &hmr_num_r RCTRL NUMBER_6  &hmr_num_r RIGHT_SHIFT NUMBER_7  &hmr_num_r RIGHT_ALT NUMBER_8  &hmr_num_r RIGHT_GUI NUMBER_9  &kp NUMBER_0  &none
-&none  &kp SLASH     &kp LS(SINGLE_QUOTE)          &kp MINUS                     &kp LS(SEMICOLON)               &none                        &kp F11                    &kp F12                          &kp COMMA                      &kp DOT                        &none         &none
-                                                   &trans                        &trans                                                                                  &trans
+           &kp PLUS   &kp N8  &kp N9  &kp N0  &kp ASTERISK    &kp LC(LEFT_ARROW)    &kp LEFT              &kp UP_ARROW    &kp RIGHT         &kp LC(RIGHT)
+&kp EQUAL  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH        &kp LG(MINUS)         &kp LC(DOWN)          &kp DOWN_ARROW  &kp LC(UP_ARROW)  &kp LG(LS(EQUAL))  &trans
+&kp COMMA  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT         &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE      &kp C_VOL_DN      &kp C_VOLUME_UP    &trans
+                              &trans  &trans                                        &trans
             >;
         };
 
