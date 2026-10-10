@@ -76,11 +76,11 @@
         device = <&trackball_split>;
 
         // オートマウスレイヤーの設定：トラックボールを動かすとレイヤー5へ（例: 2000ms）
-        input-processors = <&zip_temp_layer_mouse 5 2000>;
+        input-processors = <&zip_temp_layer_mouse 6 2000>;
 
-        // スクロールレイヤーの設定：レイヤー6がアクティブなときの挙動
+        // スクロールレイヤーの設定：レイヤー7がアクティブなときの挙動
         scroll {
-            layers = <6>;
+            layers = <7>;
             // Y軸（上下）のスクロール方向を反転
             input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         }; // ← scroll を閉じる
