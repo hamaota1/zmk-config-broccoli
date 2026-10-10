@@ -8,7 +8,7 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: Scroll Layer}
+  - {t: I, h: scroll_layer}
   - O
   - P
   - ESC
@@ -190,7 +190,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Mouse Layer:
+  mouse_layer:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -228,7 +228,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Scroll Layer:
+  scroll_layer:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
