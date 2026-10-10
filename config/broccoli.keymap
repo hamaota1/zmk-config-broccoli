@@ -44,10 +44,10 @@
 
         Device {
             bindings = <
-       &none  &none  &none   &none   &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none  &none  &none  &none   &none   &none    &none         &none         &none         &none         &trans        &bt BT_CLR
-&none  &none  &none  &none   &none   &none    &none         &none         &none         &none         &bootloader   &bt BT_CLR_ALL
-                     &trans  &trans                         &sys_reset
+       &none  &none  &none   &none   &none    &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none   &none   &none    &none         &none           &none         &none         &trans        &bt BT_CLR
+&none  &none  &none  &none   &none   &none    &none         &none           &none         &none         &bootloader   &bt BT_CLR_ALL
+                     &trans  &trans                         &studio_unlock
             >;
         };
 
@@ -113,14 +113,14 @@
 
         Tab {
             bindings = <&kp TAB>;
-            key-positions = <12 13>;
+            key-positions = <1 2>;
             layers = <0>;
             require-prior-idle-ms = <150>;
         };
 
         Escape {
             bindings = <&kp ESC>;
-            key-positions = <1 2>;
+            key-positions = <0 1>;
             layers = <0>;
             require-prior-idle-ms = <150>;
         };
