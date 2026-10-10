@@ -61,7 +61,7 @@
 
     zip_temp_layer_mouse: zip_temp_layer_mouse {
         compatible = "zmk,input-processor-temp-layer";
-        #input-processor-cells = <5>  ;
+        #input-processor-cells = <6>  ;
         excluded-positions = <16 17 18>; 
     };
 
@@ -70,10 +70,10 @@
         status = "disabled";
         device = <&trackball_split>;
 
-        input-processors = <&zip_temp_layer_mouse 5 2000>;
+        input-processors = <&zip_temp_layer_mouse 6 2000>;
 
         scroll {
-            layers = <6>;
+            layers = <7>;
             input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         }; 
     }; 
