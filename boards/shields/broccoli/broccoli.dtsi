@@ -70,7 +70,7 @@
     };
 
 
-    trackball_listener: trackball_listener {
+        trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
@@ -83,8 +83,10 @@
             layers = <6>;
             // Y軸（上下）のスクロール方向を反転
             input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
-    };
-};
+        }; // ← scroll を閉じる
+    }; // ← trackball_listener を閉じる
+
+}; // ★★★ ここを追加してルートノード `/ {` を閉じる ★★★
 
 &pinctrl {
     spi0_default: spi0_default {
