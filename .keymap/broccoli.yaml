@@ -34,7 +34,7 @@ layers:
   - ','
   - .
   - {t: /, h: '$$mdi:apple-keyboard-shift$$'}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: CAPSLOCK, h: layer4}
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:keyboard-space$$', h: Number}
   - {t: '$$mdi:keyboard-return$$', h: Arrows}
@@ -153,40 +153,40 @@ layers:
   - {t: ▽, type: trans}
   - '&studio_unlock'
   layer4:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BT CLR ALL
-  - BT CLR
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Alt+Ctl+E
+  - Alt+Ctl+R
+  - Alt+Ctl+T
+  - Alt+Ctl+U
+  - Alt+Ctl+I
+  - '~'
+  - '7'
+  - '8'
+  - '9'
+  - (
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Alt+Ctl+D
+  - Alt+Ctl+F
+  - Alt+Ctl+G
+  - Alt+Ctl+J
+  - Alt+Ctl+K
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - ^
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BOOT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
+  - ''
+  - Gui+Sft+3
+  - Sft+Gui+4
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - .
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
