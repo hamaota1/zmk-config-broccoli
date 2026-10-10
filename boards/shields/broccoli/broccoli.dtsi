@@ -4,6 +4,7 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 #include "broccoli-layouts.dtsi"
 
@@ -57,10 +58,31 @@
         };
     };
 
+// --- ここから追加・修正 ---
+
+    // オートマウスレイヤー用のプロセッサを定義
+    zip_temp_layer_mouse: zip_temp_layer_mouse {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        // クリックキーとして使用するキーのポジション番号（0始まり）を指定
+        // ※これを設定しないとクリック時にマウスレイヤーが解除されます
+        excluded-positions = <16 17 18>; 
+    };
+
+
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_split>;
+
+        // オートマウスレイヤーの設定：トラックボールを動かすとレイヤー5へ（例: 2000ms）
+        input-processors = <&zip_temp_layer_mouse 5 2000>;
+
+        // スクロールレイヤーの設定：レイヤー6がアクティブなときの挙動
+        scroll {
+            layers = <6>;
+            // Y軸（上下）のスクロール方向を反転
+            input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
     };
 };
 
