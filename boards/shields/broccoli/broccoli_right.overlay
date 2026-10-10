@@ -42,3 +42,31 @@
 &trackball_split {
     device = <&trackball>;
 };
+
+/* クリック操作などでAMLから抜けないように除外キーを設定 */
+&zip_temp_layer {
+    /* マウスクリック（J, K, Lなど）を配置するキーのポジション番号を指定 */
+    /* これがないと、クリックした瞬間にAMLが解除されてしまいます */
+    excluded-positions = <16 18>; 
+};
+
+&trackball_listener {
+    /* トラックボールを動かすと、レイヤー5を2000ms（2秒）間有効にする */
+    input-processors = <&zip_temp_layer 6 2000>;
+};
+
+#include <dt-bindings/zmk/input_transform.h>
+
+&trackball_listener {
+    /* 通常時のAML設定（前述の通り） */
+    input-processors = <&zip_temp_layer 7 2000>;
+
+    /* スクロールレイヤーの設定（例: レイヤー6） */
+    scroll_layer {
+        layers = ;
+        /* カーソル移動をスクロールに変換。Y軸を反転させる一般的な設定 */
+        input-processors = 
+            <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 3>; /* 必要に応じてスクロール速度を1/3に減速 */
+    };
+};
