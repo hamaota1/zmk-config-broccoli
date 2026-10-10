@@ -38,14 +38,21 @@
         compatible = "pixart,paw3222";
         reg = <0>;
         status = "okay";
-        
-        // Device communication settings
+
         spi-max-frequency = <2000000>;
-        
-        // D6 GPIO is used for sensor interrupt (active low)
         irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        
-        // CPI (counts per inch / DPI) sensitivity setting
         cpi = <800>;
+    };
+};
+
+/ {
+    chosen {
+        zmk,input-split-peripheral = &input_split_peripheral;
+    };
+
+    input_split_peripheral: input_split_peripheral {
+        compatible = "zmk,input-split-peripheral";
+        status = "okay";
+        input = <&trackball_central>;
     };
 };
