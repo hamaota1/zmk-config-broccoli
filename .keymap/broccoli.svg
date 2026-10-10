@@ -355,12 +355,12 @@ path.combo { stroke: #7f7f7f; }
 <text x="588" y="63" class="combo tap">MCLK</text>
 </g>
 <g class="combo combopos-5">
-<rect rx="6" ry="6" x="154" y="80" width="28" height="26" class="combo"/>
-<text x="168" y="93" class="combo tap">Tab</text>
+<rect rx="6" ry="6" x="154" y="24" width="28" height="26" class="combo"/>
+<text x="168" y="37" class="combo tap">Tab</text>
 </g>
 <g class="combo combopos-6">
-<rect rx="6" ry="6" x="154" y="24" width="28" height="26" class="combo"/>
-<text x="168" y="37" class="combo tap">ESC</text>
+<rect rx="6" ry="6" x="98" y="51" width="28" height="26" class="combo"/>
+<text x="112" y="64" class="combo tap">ESC</text>
 </g>
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="602" y="24" width="28" height="26" class="combo"/>
@@ -868,7 +868,7 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(507, 221) rotate(-15.0)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 70%">&amp;sys_reset</tspan></text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 64%">&amp;studio_un…</tspan></text>
 </g>
 <g class="combo combopos-0">
 <path d="M130,192 l-86,-46" class="combo"/>
