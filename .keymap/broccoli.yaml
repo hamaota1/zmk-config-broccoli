@@ -21,7 +21,7 @@ layers:
   - {t: J, h: '$$mdi:apple-keyboard-command$$'}
   - {t: K, h: '$$mdi:apple-keyboard-option$$'}
   - {t: L, h: ⌃}
-  - {t: ;, h: layer3}
+  - {t: ;, h: Device}
   - $$mdi:backspace$$
   - Tab
   - {t: Z, h: '$$mdi:apple-keyboard-shift$$'}
@@ -114,30 +114,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  layer3:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - $$mdi:chevron-up$$
-  - ''
-  - BOOT
-  - ''
-  - layer4
-  - $$mdi:apple-keyboard-command$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-shift$$
-  - ⌃
-  - ''
-  - $$mdi:chevron-left$$
-  - $$mdi:chevron-down$$
-  - $$mdi:chevron-right$$
-  - {type: held}
-  - ''
-  - ''
+  Device:
   - ''
   - ''
   - ''
@@ -149,9 +126,32 @@ layers:
   - {t: '$$mdi:bluetooth-connect$$', h: '4'}
   - {t: '$$mdi:bluetooth-connect$$', h: '5'}
   - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BOOT
+  - BT CLR ALL
   - {t: ▽, type: trans}
-  - $$mdi:backspace-reverse$$
   - {t: ▽, type: trans}
+  - '&sys_reset'
   layer4:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -164,7 +164,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -173,7 +172,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   - ''
   - {t: ▽, type: trans}
@@ -262,7 +262,7 @@ combos:
   k: ':'
   l: [default]
 - p: [17, 18, 19]
-  k: layer3
+  k: Device
   l: [default]
 - p: [10, 22]
   k: ESC
