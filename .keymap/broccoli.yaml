@@ -267,43 +267,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [24, 25]
-  k: ABC
-  l: [default]
-- p: [30, 31]
-  k: あいう
-  l: [default]
-- p: [17, 18]
-  k: LCLK
-  l: [default]
-- p: [18, 19]
-  k: RCLK
-  l: [default]
-- p: [19, 17]
-  k: MCLK
-  l: [default]
-  a: top
-  o: 0.15
 - p: [1, 2]
   k: Tab
   l: [default]
 - p: [0, 1]
   k: ESC
   l: [default]
-- p: [7, 8]
-  k: '"'
-  l: [default]
-- p: [6, 7]
-  k: ;
-  l: [default]
-- p: [29, 30]
-  k: ':'
-  l: [default]
 - p: [17, 18, 19]
   k: Device
   l: [default]
-- p: [10, 22]
-  k: ESC
-  l: [Mouse Layer]
-- p: [10, 22, 35]
-  k: {t: Mouse Layer, h: toggle}
